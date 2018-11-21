@@ -1,4 +1,4 @@
-public class MyString implements CharSequence{
+public class MyString implements CharSequence, Comparable<CharSequence>{
 	private char[] data;
 
 	public MyString(CharSequence input){
@@ -24,12 +24,22 @@ public class MyString implements CharSequence{
 		int point = 0;
 		for (int x = start; x < end; x++){
 			output[point] = data[x];
+			point++;
 		}
 		return new MyString(output);
 	}
 
 	public int length(){
 		return data.length;
+	}
+
+	public int compareTo(CharSequence input){
+		for (int x = 0; x < data.length; x++){
+			if (data[x] != input.charAt(x)){
+				return 0;
+			}
+		}
+		return 1;
 	}
 
 	public String toString(){
