@@ -36,7 +36,7 @@ public class MyString implements CharSequence, Comparable<CharSequence>{
 	public int compareTo(CharSequence input){
 		for (int x = 0; x < data.length; x++){
 			if (data[x] != input.charAt(x)){
-				return 0;
+				return -1;
 			}
 		}
 		return 1;
