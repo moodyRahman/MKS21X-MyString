@@ -22,5 +22,9 @@ public class Test{
 		System.out.println();
 		System.out.println(d.length());
 		System.out.println(quack.length());
+		System.out.println();
+
+		MyString wowie = new MyString(new MyString(new MyString(new MyString(new MyString(new MyString(new MyString(new MyString(new MyString(new MyString(new MyString("noot")))))))))));
+		System.out.println(wowie);
 	}
 }
