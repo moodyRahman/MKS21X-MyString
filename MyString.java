@@ -16,10 +16,16 @@ public class MyString implements CharSequence, Comparable<CharSequence>{
 	}
 
 	public char charAt(int index){
+		if (index < 0 || index >= data.length){
+			throw new IndexOutOfBoundsException();
+		}
 		return data[index];
 	}
 
 	public MyString subSequence(int start, int end){
+		if (start < 0 || end < 0 || start > end || end > data.length){
+			throw new IndexOutOfBoundsException();
+		}
 		char[] output = new char[end - start];
 		int point = 0;
 		for (int x = start; x < end; x++){
