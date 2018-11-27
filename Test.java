@@ -26,5 +26,16 @@ public class Test{
 
 		MyString wowie = new MyString(new MyString(new MyString(new MyString(new MyString(new MyString(new MyString(new MyString(new MyString(new MyString(new MyString("noot")))))))))));
 		System.out.println(wowie);
+
+		MyString doot = new MyString("a");
+		System.out.println(wowie.compareTo(doot));
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+
+		MyString s = new MyString("aaaad");
+		MyString t = new MyString("aaa");
+		System.out.println(s.compareTo(t));
 	}
 }
