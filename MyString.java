@@ -76,12 +76,25 @@ public class MyString implements CharSequence, Comparable<CharSequence>{
 	 * @return       1 if the two Objects are the swim, -1 if otherwise
 	 */
 	public int compareTo(CharSequence input){
-		for (int x = 0; x < data.length; x++){
-			if (data[x] != input.charAt(x)){
-				return -1;
+		return looper(this, input);
+	}
+
+	private int looper(CharSequence a, CharSequence b){
+		//dont forget, a is the LITTLE ONE
+		try {
+			if (b.length() < a.length()){
+				looper(b, a);
 			}
+			for (int x = 0; x < a.length(); x++){
+				System.out.println(x);
+				if (a.charAt(x) != b.charAt(x)){
+					return (int)a.charAt(x) - (int)b.charAt(x);
+				}
+			}
+		} catch (IndexOutOfBoundsException e){
+			return 0;
 		}
-		return 1;
+		return 0;
 	}
 
 	/**
